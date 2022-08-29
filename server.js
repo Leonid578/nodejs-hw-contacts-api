@@ -8,10 +8,12 @@ const PORT = process.env.PORT || 8080;
 try {
     mongoose.connect(MONGO_DB).then(() => {
         console.log(`mongoDB connection successful`);
+
+        app.listen(PORT, () => {
+            console.log(`server start on port = ${PORT}`);
+        });
     });
-    app.listen(PORT, () => {
-        console.log(`server start on port = ${PORT}`);
-    });
+    
 } catch (error) {
     process.exit(1);
 }
