@@ -21,7 +21,7 @@ router.delete("/:contactId", tokenMiddelware, deletContact);
 
 router.put("/:contactId", tokenMiddelware, updateValidation, updateContact);
 
-router.patch("/:contactId", tokenMiddelware, validationFavorite, updateFavorite);
+router.patch("/:contactId/favorite", tokenMiddelware, validationFavorite, updateFavorite);
 
 module.exports = router;
 
