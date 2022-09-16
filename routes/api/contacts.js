@@ -9,6 +9,7 @@ const {
     deletContact,
     updateContact,
     updateFavorite,
+    getFavoriteContact,
 } = require("../../controllers/contact/contact");
 
 router.get("/", tokenMiddelware, getAllContacts);
@@ -20,6 +21,8 @@ router.post("/", tokenMiddelware, addValidation, addContact);
 router.delete("/:contactId", tokenMiddelware, deletContact);
 
 router.put("/:contactId", tokenMiddelware, updateValidation, updateContact);
+
+router.get("/:contactId/favorite", tokenMiddelware, getFavoriteContact);
 
 router.patch("/:contactId/favorite", tokenMiddelware, validationFavorite, updateFavorite);
 
